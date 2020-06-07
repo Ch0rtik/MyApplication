@@ -19,16 +19,21 @@ public class SettingsActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 SharedPreferences sharedPreferences = getSharedPreferences(MenuActivity.SHARED_PREFS, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+
                 editor.putInt(MenuActivity.FIFTH_HIGH, 0);
                 editor.putInt(MenuActivity.FOURTH_HIGH, 0);
                 editor.putInt(MenuActivity.MAJOR_THIRD_HIGH, 0);
                 editor.putInt(MenuActivity.MINOR_THIRD_HIGH, 0);
                 editor.putInt(MenuActivity.MAJOR_SEVENTH_HIGH, 0);
                 editor.putInt(MenuActivity.MINOR_SEVENTH_HIGH, 0);
+
                 editor.apply();
+
                 Toast.makeText(SettingsActivity.this, R.string.high_score_deleted_toast, Toast.LENGTH_LONG).show();
+
             }
 
         });
