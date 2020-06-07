@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="delete_high_score_button">Сбросить все рекорды</string>
+    <string name="high_score_deleted_toast">Рекорды сброшены</string>
+    <string name="choose">ВЫБЕРИТЕ</string>
+    <string name="high_score">Рекорд:</string>
+    <string name="of_note">ноты</string>
+    <string name="fifth_text">Чистые квинты</string>
+    <string name="fourth_text">Чистые кварты</string>
+    <string name="major_third_text">Большие терции</string>
+    <string name="minor_third_text">Малые терции</string>
+    <string name="major_seventh_text">Большие септимы</string>
+    <string name="minor_seventh_text">Малые септимы</string>
+    <string name="third_button">Терции/Сексты %1$s</string>
+    <string name="seventh_button">Септимы/Секунды %1$s</string>
+    <string name="quest_num">Вопросов пройдено: %1$s/%2$s</string>
+    <string name="high_text">%1$s/10</string>
+    <string name="score_num">Правильных ответов: %1$s</string>
+    <string-array name="note_names">
+        <item>F♭</item>
+        <item>C♭</item>
+        <item>G♭</item>
+        <item>D♭</item>
+        <item>A♭</item>
+        <item>E♭</item>
+        <item>B♭</item>
+        <item>F</item>
+        <item>C</item>
+        <item>G</item>
+        <item>D</item>
+        <item>A</item>
+        <item>E</item>
+        <item>B</item>
+        <item>F#</item>
+        <item>C#</item>
+        <item>G#</item>
+        <item>D#</item>
+        <item>A#</item>
+        <item>E#</item>
+        <item>B#</item>
+    </string-array>
+    <string-array name="interval_names">
+        <item>F♭</item>
+        <item>УМЕНЬШЕННУЮ КВАРТУ</item>
+        <item>МАЛУЮ СЕКУНДУ</item>
+        <item>МАЛУЮ СЕКСТУ</item>
+        <item>МАЛУЮ ТЕРЦИЮ</item>
+        <item>МАЛУЮ СЕПТИМУ</item>
+        <item>ЧИСТУЮ КВАРТУ</item>
+        <item>ПРИМУ</item>
+        <item>ЧИСТУЮ КВИНТУ</item>
+        <item>БОЛЬШУЮ СЕКУНДУ</item>
+        <item>БОЛЬШУЮ СЕКСТУ</item>
+        <item>БОЛЬШУЮ ТЕРЦИЮ</item>
+        <item>БОЛЬШУЮ СЕПТИМУ</item>
+        <item>УВЕЛИЧЕННУЮ КВАРТУ</item>
+        <item>F#</item>
+        <item>УВЕЛИЧЕННУЮ КВИНТУ</item>
+        <item>УВЕЛИЧЕННУЮ СЕКУНДУ</item>
+        <item>УВЕЛИЧЕННУЮ СЕКСТУ</item>
+        <item>A#</item>
+        <item>E#</item>
+        <item>B#</item>
+    </string-array>
+</resources>
