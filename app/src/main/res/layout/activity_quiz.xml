@@ -27,7 +27,7 @@
             android:layout_marginBottom="4dp"
             android:background="@android:color/background_light"
             android:gravity="center"
-            android:text="A"
+            android:text="До"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="56sp"
             android:textStyle="bold" />
@@ -45,7 +45,7 @@
 
         <TextView
             android:id="@+id/intervalText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
             android:background="@android:color/background_light"

@@ -5,6 +5,13 @@
     <string name="choose">ВЫБЕРИТЕ</string>
     <string name="high_score">Рекорд:</string>
     <string name="of_note">ноты</string>
+    <string name="majorChord">Мажорные трезвучия</string>
+    <string name="minorChord">Минорные трезвучия</string>
+    <string name="majorSeventhChord">Мaj7 аккорды</string>
+    <string name="minorSeventhChord">Min7 аккорды</string>
+    <string name="dominantChord">Доминант-аккорды</string>
+    <string name="minMajChord">MinMaj аккорды</string>
+    <string name="anyChord">Все аккорды</string>
     <string name="fifth_text">Чистые квинты</string>
     <string name="fourth_text">Чистые кварты</string>
     <string name="major_third_text">Большие терции</string>
@@ -15,7 +22,13 @@
     <string name="seventh_button">Септимы/Секунды %1$s</string>
     <string name="quest_num">Вопросов пройдено: %1$s/%2$s</string>
     <string name="high_text">%1$s/10</string>
+    <string name="interval_button">Интервалы</string>
+    <string name="chord_button">Аккорды</string>
     <string name="score_num">Правильных ответов: %1$s</string>
+    <string name="fixed_do">До, Ре, Ми...</string>
+    <string name="standard_notation">C, D, E...</string>
+    <string name="note_name_settings">Сменить названия нот на:</string>
+    <string name="note_names_toast">Система нотации изменена</string>
     <string-array name="note_names">
         <item>F♭</item>
         <item>C♭</item>
@@ -38,6 +51,29 @@
         <item>A#</item>
         <item>E#</item>
         <item>B#</item>
+    </string-array>
+    <string-array name="note_names_do">
+        <item>Фа♭</item>
+        <item>До♭</item>
+        <item>Соль♭</item>
+        <item>Ре♭</item>
+        <item>Ля♭</item>
+        <item>Ми♭</item>
+        <item>Си♭</item>
+        <item>Фа</item>
+        <item>До</item>
+        <item>Соль</item>
+        <item>Ре</item>
+        <item>Ля</item>
+        <item>Ми</item>
+        <item>Си</item>
+        <item>Фа#</item>
+        <item>До#</item>
+        <item>Соль#</item>
+        <item>Ре#</item>
+        <item>Ля#</item>
+        <item>Ми#</item>
+        <item>Си#</item>
     </string-array>
     <string-array name="interval_names">
         <item>F♭</item>
