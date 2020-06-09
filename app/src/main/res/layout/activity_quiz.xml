@@ -27,9 +27,9 @@
             android:layout_marginBottom="4dp"
             android:background="@android:color/background_light"
             android:gravity="center"
-            android:text="До"
+            android:text="До, Ми, Соль, Си"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="56sp"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
         <TextView
@@ -40,6 +40,7 @@
             android:background="@android:color/background_light"
             android:gravity="center"
             android:text="ВЫБЕРИТЕ"
+            android:textAllCaps="true"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="28sp" />
 
@@ -51,6 +52,7 @@
             android:background="@android:color/background_light"
             android:gravity="center"
             android:text="ЧИСТУЮ КВИНТУ"
+            android:textAllCaps="true"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="28sp" />
     </LinearLayout>
@@ -82,16 +84,17 @@
         app:layout_constraintVertical_bias="0.07999998" />
 
     <LinearLayout
+        android:id="@+id/answerLayout0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6">
+        app:layout_constraintVertical_bias="0.52">
 
         <Button
             android:id="@+id/answerButton0"
@@ -101,20 +104,22 @@
             android:layout_marginBottom="4dp"
             android:background="@android:color/background_light"
             android:text="0"
-            android:textSize="28sp" />
+            android:textAllCaps="false"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/answerLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6">
+        app:layout_constraintVertical_bias="0.52">
 
         <Button
             android:id="@+id/answerButton1"
@@ -124,20 +129,22 @@
             android:layout_marginBottom="4dp"
             android:background="@android:color/background_light"
             android:text="0"
-            android:textSize="28sp" />
+            android:textAllCaps="false"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/answerLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85">
+        app:layout_constraintVertical_bias="0.84000003">
 
         <Button
             android:id="@+id/answerButton2"
@@ -147,20 +154,23 @@
             android:layout_marginBottom="4dp"
             android:background="@android:color/background_light"
             android:text="0"
-            android:textSize="28sp" />
+            android:textAllCaps="false"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
+
+        android:id="@+id/answerLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85">
+        app:layout_constraintVertical_bias="0.84000003">
 
         <Button
             android:id="@+id/answerButton3"
@@ -170,7 +180,160 @@
             android:layout_marginBottom="4dp"
             android:background="@android:color/background_light"
             android:text="0"
-            android:textSize="28sp" />
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/answerLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52">
+
+        <Button
+            android:id="@+id/answerButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_light"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/answerLayout5"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68">
+
+        <Button
+            android:id="@+id/answerButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_light"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/answerLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68">
+
+        <Button
+            android:id="@+id/answerButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_light"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/answerLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68">
+
+        <Button
+            android:id="@+id/answerButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_light"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/answerLayout8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84000003">
+
+        <Button
+            android:id="@+id/answerButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_light"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/submitLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95">
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorPrimary"
+            android:text="Ответить"
+            android:textColor="@android:color/background_light"
+            android:textSize="25sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

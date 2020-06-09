@@ -11,12 +11,12 @@ import android.widget.TextView;
 
 public class ChordActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView[] highText = new TextView[7];
-    private RelativeLayout[] chordView = new RelativeLayout[7];
+    private TextView[] highText = new TextView[8];
+    private RelativeLayout[] chordView = new RelativeLayout[8];
 
     private int reqCode;
 
-    private int[] highScore= new int[7];
+    private int[] highScore= new int[8];
 
     public static final String CHORD_TYPE= "com.example.application.example.CHORD_TYPE";
     public static final String MAJOR_CHORD_HIGH="majorChordHigh";
@@ -26,6 +26,7 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
     public static final String DOMINANT_CHORD_HIGH="dominantChordHigh";
     public static final String MIN_MAJ_CHORD_HIGH_HIGH="minMajChordHigh";
     public static final String ANY_CHORD_HIGH="anyChordHigh";
+    public static final String NOTE_CHORD_HIGH="noteChordHigh";
 
 
     @Override
@@ -40,6 +41,7 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
         chordView[4] = findViewById(R.id.dominantChordView);
         chordView[5] = findViewById(R.id.minMajChordView);
         chordView[6] = findViewById(R.id.anyChordView);
+        chordView[7] = findViewById(R.id.noteChordView);
 
         highText[0] = findViewById(R.id.majorChordHigh);
         highText[1] = findViewById(R.id.minorChordHigh);
@@ -48,6 +50,7 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
         highText[4] = findViewById(R.id.dominantChordHigh);
         highText[5] = findViewById(R.id.minMajChordhHigh);
         highText[6] = findViewById(R.id.anyChordhHigh);
+        highText[7] = findViewById(R.id.noteChordhHigh);
 
         chordView[0].setOnClickListener(this);
         chordView[1].setOnClickListener(this);
@@ -56,6 +59,7 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
         chordView[4].setOnClickListener(this);
         chordView[5].setOnClickListener(this);
         chordView[6].setOnClickListener(this);
+        chordView[7].setOnClickListener(this);
 
         loadData();
         updateViews();
@@ -99,6 +103,11 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
             case R.id.anyChordView:
 
                 reqCode = 6;
+                break;
+
+            case R.id.noteChordView:
+
+                reqCode = 7;
 
         }
 
@@ -137,6 +146,9 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case 6:
                 highName = ANY_CHORD_HIGH;
+                break;
+            case 7:
+                highName = NOTE_CHORD_HIGH;
         }
 
         if (resultCode == RESULT_OK) {
@@ -172,12 +184,13 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
         highScore[4] = sharedPreferences.getInt(DOMINANT_CHORD_HIGH, 0);
         highScore[5] = sharedPreferences.getInt(MIN_MAJ_CHORD_HIGH_HIGH, 0);
         highScore[6] = sharedPreferences.getInt(ANY_CHORD_HIGH, 0);
+        highScore[7] = sharedPreferences.getInt(NOTE_CHORD_HIGH, 0);
 
     }
 
     public void updateViews() {
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 8; i++) {
 
             highText[i].setText(String.format(getResources().getString(R.string.high_text), String.valueOf(highScore[i])));
 

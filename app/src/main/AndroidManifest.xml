@@ -9,17 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChordActivity"></activity>
+        <activity android:name=".ChordActivity" />
         <activity android:name=".MenuActivity" />
-        <activity
-            android:name=".TheoryActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".IntervalActivity"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".TheoryActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".IntervalActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

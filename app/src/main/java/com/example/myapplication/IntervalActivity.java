@@ -14,17 +14,18 @@ public class IntervalActivity extends AppCompatActivity implements View.OnClickL
 
     private int reqCode;
 
-    private View[] menuView = new View[6];
-    private TextView[] highText = new TextView[6];
-    private int[] highScore = new int[6];
+    private View[] menuView = new View[7];
+    private TextView[] highText = new TextView[7];
+    private int[] highScore = new int[7];
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String FIFTH_HIGH = "fifthHigh";
     public static final String FOURTH_HIGH = "fourthHigh";
     public static final String MAJOR_THIRD_HIGH = "majorThirdHigh";
     public static final String MINOR_THIRD_HIGH = "minorThirdHigh";
-    public static final String MAJOR_SEVENTH_HIGH = "MajorSeventhHigh";
-    public static final String MINOR_SEVENTH_HIGH = "MinorSeventhHigh";
+    public static final String MAJOR_SEVENTH_HIGH = "majorSeventhHigh";
+    public static final String MINOR_SEVENTH_HIGH = "minorSeventhHigh";
+    public static final String INTERVAL_NOTE_HIGH = "intervalNoteHigh";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class IntervalActivity extends AppCompatActivity implements View.OnClickL
         menuView[3] = findViewById(R.id.minorThirdView);
         menuView[4] = findViewById(R.id.majorSeventhView);
         menuView[5] = findViewById(R.id.minorSeventhView);
+        menuView[6] = findViewById(R.id.intervalNoteView);
 
         highText[0] = findViewById(R.id.perfectFifthHigh);
         highText[1] = findViewById(R.id.perfectFourthHigh);
@@ -44,6 +46,7 @@ public class IntervalActivity extends AppCompatActivity implements View.OnClickL
         highText[3] = findViewById(R.id.minorThirdHigh);
         highText[4] = findViewById(R.id.majorSeventhHigh);
         highText[5] = findViewById(R.id.minorSeventhHigh);
+        highText[6] = findViewById(R.id.intervalNoteHigh);
 
 
         loadData();
@@ -55,6 +58,7 @@ public class IntervalActivity extends AppCompatActivity implements View.OnClickL
         menuView[3].setOnClickListener(this);
         menuView[4].setOnClickListener(this);
         menuView[5].setOnClickListener(this);
+        menuView[6].setOnClickListener(this);
 
     }
 
@@ -96,11 +100,20 @@ public class IntervalActivity extends AppCompatActivity implements View.OnClickL
 
                 reqCode = 5;
                 intent.putExtra(INTERVAL_NUMBER, -2);
+                break;
+
+            case R.id.intervalNoteView:
+
+                reqCode=6;
 
 
         }
 
-        intent.putExtra(MenuActivity.QUIZ_TYPE, 0);
+        if(reqCode==6){
+            intent.putExtra(MenuActivity.QUIZ_TYPE, 2);
+        }else{
+            intent.putExtra(MenuActivity.QUIZ_TYPE, 0);
+        }
         startActivityForResult(intent, reqCode);
 
     }
@@ -131,6 +144,9 @@ public class IntervalActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case 5:
                 highName = MINOR_SEVENTH_HIGH;
+                break;
+            case 6:
+                highName = INTERVAL_NOTE_HIGH;
         }
 
         if (resultCode == RESULT_OK) {
@@ -165,12 +181,13 @@ public class IntervalActivity extends AppCompatActivity implements View.OnClickL
         highScore[3] = sharedPreferences.getInt(MINOR_THIRD_HIGH, 0);
         highScore[4] = sharedPreferences.getInt(MAJOR_SEVENTH_HIGH, 0);
         highScore[5] = sharedPreferences.getInt(MINOR_SEVENTH_HIGH, 0);
+        highScore[6] = sharedPreferences.getInt(MINOR_SEVENTH_HIGH, 0);
 
     }
 
     public void updateViews() {
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
 
             highText[i].setText(String.format(getResources().getString(R.string.high_text), String.valueOf(highScore[i])));
 

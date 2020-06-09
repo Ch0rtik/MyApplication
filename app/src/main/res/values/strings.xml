@@ -1,17 +1,21 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Tusic</string>
     <string name="delete_high_score_button">Сбросить все рекорды</string>
     <string name="high_score_deleted_toast">Рекорды сброшены</string>
     <string name="choose">ВЫБЕРИТЕ</string>
     <string name="high_score">Рекорд:</string>
+    <string name="interval">Интервал</string>
+    <string name="two_notes">%1$s, %2$s</string>
+    <string name="chord">аккорд</string>
     <string name="of_note">ноты</string>
     <string name="majorChord">Мажорные трезвучия</string>
     <string name="minorChord">Минорные трезвучия</string>
     <string name="majorSeventhChord">Мaj7 аккорды</string>
     <string name="minorSeventhChord">Min7 аккорды</string>
-    <string name="dominantChord">Доминант-аккорды</string>
-    <string name="minMajChord">MinMaj аккорды</string>
+    <string name="dominantChord">Доминантные аккорды</string>
+    <string name="minMajChord">minMaj аккорды</string>
     <string name="anyChord">Все аккорды</string>
+    <string name="noteChord">Ноты аккорда</string>
     <string name="fifth_text">Чистые квинты</string>
     <string name="fourth_text">Чистые кварты</string>
     <string name="major_third_text">Большие терции</string>
@@ -25,10 +29,19 @@
     <string name="interval_button">Интервалы</string>
     <string name="chord_button">Аккорды</string>
     <string name="score_num">Правильных ответов: %1$s</string>
+    <string name="build">Постройте</string>
     <string name="fixed_do">До, Ре, Ми...</string>
     <string name="standard_notation">C, D, E...</string>
     <string name="note_name_settings">Сменить названия нот на:</string>
     <string name="note_names_toast">Система нотации изменена</string>
+    <string name="interval_note_text">Интервал по нотам</string>
+    <string name="chord_note">%1$s-аккорд</string>
+    <string-array name="chord_types">
+        <item>Maj7</item>
+        <item>min7</item>
+        <item>7</item>
+        <item>minMaj7</item>
+    </string-array>
     <string-array name="note_names">
         <item>F♭</item>
         <item>C♭</item>
@@ -77,7 +90,7 @@
     </string-array>
     <string-array name="interval_names">
         <item>F♭</item>
-        <item>УМЕНЬШЕННУЮ КВАРТУ</item>
+        <item>УМЕНЬШЕННУЮ КВинту</item>
         <item>МАЛУЮ СЕКУНДУ</item>
         <item>МАЛУЮ СЕКСТУ</item>
         <item>МАЛУЮ ТЕРЦИЮ</item>
@@ -90,6 +103,29 @@
         <item>БОЛЬШУЮ ТЕРЦИЮ</item>
         <item>БОЛЬШУЮ СЕПТИМУ</item>
         <item>УВЕЛИЧЕННУЮ КВАРТУ</item>
+        <item>F#</item>
+        <item>УВЕЛИЧЕННУЮ КВИНТУ</item>
+        <item>УВЕЛИЧЕННУЮ СЕКУНДУ</item>
+        <item>УВЕЛИЧЕННУЮ СЕКСТУ</item>
+        <item>A#</item>
+        <item>E#</item>
+        <item>B#</item>
+    </string-array>
+    <string-array name="interval_names_2">
+        <item>F♭</item>
+        <item>dim5</item>
+        <item>m2</item>
+        <item>m6</item>
+        <item>m3</item>
+        <item>m7</item>
+        <item>P4</item>
+        <item>P1</item>
+        <item>P5</item>
+        <item>M2</item>
+        <item>M6</item>
+        <item>M3</item>
+        <item>M7</item>
+        <item>aug5</item>
         <item>F#</item>
         <item>УВЕЛИЧЕННУЮ КВИНТУ</item>
         <item>УВЕЛИЧЕННУЮ СЕКУНДУ</item>

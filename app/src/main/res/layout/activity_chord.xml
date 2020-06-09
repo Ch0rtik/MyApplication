@@ -26,7 +26,7 @@
 
             <TextView
                 android:id="@+id/majorChordText"
-                android:layout_width="220dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:layout_marginStart="15dp"
@@ -73,7 +73,7 @@
 
             <TextView
                 android:id="@+id/minorChordText"
-                android:layout_width="210dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:layout_marginStart="15dp"
@@ -211,7 +211,7 @@
 
             <TextView
                 android:id="@+id/dominantChordText"
-                android:layout_width="220dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:layout_marginStart="15dp"
@@ -324,6 +324,52 @@
 
             <TextView
                 android:id="@+id/anyChordhHigh"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="end"
+                android:text="0/10"
+                android:textAllCaps="true"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/noteChordView"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_light"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="65dp"
+                android:text="@string/high_score"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/noteChordText"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/noteChord"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/noteChordhHigh"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
