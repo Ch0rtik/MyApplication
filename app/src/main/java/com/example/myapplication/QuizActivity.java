@@ -31,6 +31,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private boolean[] intervalTaken = new boolean[11];
     private boolean[] buttonTaken = new boolean[9];
     private boolean[] buttonPressed = new boolean[9];
+    private boolean[] scaleNoteTaken = new boolean[7];
+
+    private int scaleType;
+
     private boolean answeredWrong;
     private int buttonPressedAmount = 0;
 
@@ -54,7 +58,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private boolean any;
 
     private int[] buttonValue = new int[4];
-    private int[] noteValue = new int[4];
+    private int[] noteValue = new int[7];
 
     private Button[] ansButton = new Button[9];
     private Button submitButton;
@@ -187,6 +191,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 2:
                 startIntervalQuiz2();
+                break;
+            case 3:
+                scaleType=intent.getIntExtra(TonalityActivity.SCALE_NUMBER, 0);
+                startTonalityQuiz();
         }
 
 
@@ -388,7 +396,13 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         if (note > 6) {
             noteTaken[note - 7] = true;
             if (note > 13) {
-                noteTaken[note - 13] = true;
+                noteTaken[note - 14] = true;
+            }
+        }
+        if (note < 15) {
+            noteTaken[note + 7] = true;
+            if (note < 8) {
+                noteTaken[note + 14] = true;
             }
         }
 
@@ -484,10 +498,17 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             chordNoteTaken[i] = false;
         }
 
-        if (noteValue[0] > 6) {
-            noteTaken[noteValue[0] - 7] = true;
-            if (noteValue[0] > 13) {
-                noteTaken[noteValue[0] - 14] = true;
+        if (note > 6) {
+            noteTaken[note - 7] = true;
+            if (note > 13) {
+                noteTaken[note - 14] = true;
+            }
+        }
+
+        if (note < 15) {
+            noteTaken[note + 7] = true;
+            if (note < 8) {
+                noteTaken[note + 14] = true;
             }
         }
 
@@ -525,9 +546,111 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public void startTonalityQuiz() {
+        for (int i = 4; i < 9; i++) {
+            ansButton[i].setVisibility(View.VISIBLE);
+            ansButton[i].setClickable(true);
+            ansLayout[i].setVisibility(View.VISIBLE);
+        }
+
+        for (int i = 0; i < 21; i++) {
+            noteTaken[i] = false;
+        }
+
+        for (int i = 0; i < 9; i++) {
+            buttonTaken[i] = false;
+            rightChordButton[i] = false;
+        }
+
+        for (int i = 0; i < 4; i++) {
+            chordNoteTaken[i] = false;
+        }
+
+        for (int i = 0; i < 4; i++) {
+            noteValue[i] = 0;
+        }
+
+        int note;
+        do note = new Random().nextInt(noteNumber) + noteSkip; while (note == prevNote);
+
+        noteValue[0] = note;
+        prevNote = note;
+
+
+        noteValue[1] = noteValue[0] + 2;
+        noteValue[2] = noteValue[0] + 4;
+        noteValue[3] = noteValue[0] - 1;
+        noteValue[4] = noteValue[0] + 1;
+        noteValue[5] = noteValue[0] + 3;
+        noteValue[6] = noteValue[0] + 5;
+
+        String[] scaleNames = getResources().getStringArray(R.array.scale_names);
+
+        questText.setText(R.string.build);
+        intervalText.setText(scaleNames[scaleType]);
+
+        noteText.setText(noteNames[noteValue[scaleType]]);
+
+        for (int i = 0; i < 7; i++) {
+            scaleNoteTaken[i] = false;
+        }
+
+        if (noteValue[scaleType] > 6) {
+            noteTaken[noteValue[scaleType]- 7] = true;
+            if (noteValue[scaleType] > 13) {
+                noteTaken[noteValue[scaleType] - 14] = true;
+            }
+        }
+
+        if (noteValue[scaleType] < 14) {
+            noteTaken[noteValue[scaleType] + 7] = true;
+            if (noteValue[scaleType] < 7) {
+                noteTaken[noteValue[scaleType] + 14] = true;
+            }
+        }
+
+        int buttonNumber;
+
+        for (int i = 0; i < 7; i++) {
+            do {
+
+                buttonNumber = new Random().nextInt(9);
+
+            } while (buttonTaken[buttonNumber]);
+
+            noteTaken[noteValue[i]] = true;
+
+            buttonTaken[buttonNumber] = true;
+            ansButton[buttonNumber].setText(noteNames[noteValue[i]]);
+
+            rightChordButton[buttonNumber] = true;
+        }
+
+        int randomNoteNumber;
+
+        for (int i = 0; i < 9; i++) {
+            if (!buttonTaken[i]) {
+                do {
+                    randomNoteNumber = new Random().nextInt(21);
+                } while (noteTaken[randomNoteNumber]);
+
+                noteTaken[randomNoteNumber] = true;
+
+                ansButton[i].setText(noteNames[randomNoteNumber]);
+            }
+        }
+    }
+
     private void Check(int playerButton) {
 
-        if (chordQuizType == 7) {
+        if (chordQuizType == 7 || quizType == 3) {
+
+            int taskType;
+            if (quizType == 3) {
+                taskType = 7;
+            } else {
+                taskType = 4;
+            }
 
             if (buttonPressed[playerButton]) {
 
@@ -537,8 +660,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
                 buttonPressed[playerButton] = false;
 
+                buttonPressedAmount--;
+
             } else {
-                if (buttonPressedAmount < 4) {
+                if (buttonPressedAmount < taskType) {
                     ansButton[playerButton].setTextColor(Color.WHITE);
                     ansButton[playerButton].setBackgroundResource(R.color.colorPrimary);
                     ansLayout[playerButton].setBackgroundColor(Color.WHITE);
@@ -549,7 +674,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
 
-            if (buttonPressedAmount == 4) {
+            if (buttonPressedAmount == taskType) {
                 submitButton.setVisibility(View.VISIBLE);
                 submitButton.setClickable(true);
                 submitLayout.setVisibility(View.VISIBLE);
@@ -638,7 +763,11 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
             numText.setText(String.format(getResources().getString(R.string.quest_num), String.valueOf(currentQuestNumb), String.valueOf(questNumb)));
             scoreText.setText(String.format(getResources().getString(R.string.score_num), String.valueOf(score)));
-            startChordQuiz2();
+            if (quizType == 3) {
+                startTonalityQuiz();
+            } else {
+                startChordQuiz2();
+            }
         }
     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tusic</string>
+    <string name="app_name">Intervall</string>
     <string name="delete_high_score_button">Сбросить все рекорды</string>
     <string name="high_score_deleted_toast">Рекорды сброшены</string>
     <string name="choose">ВЫБЕРИТЕ</string>
@@ -28,6 +28,7 @@
     <string name="high_text">%1$s/10</string>
     <string name="interval_button">Интервалы</string>
     <string name="chord_button">Аккорды</string>
+    <string name="tonality_button">Тональности</string>
     <string name="score_num">Правильных ответов: %1$s</string>
     <string name="build">Постройте</string>
     <string name="fixed_do">До, Ре, Ми...</string>
@@ -35,6 +36,22 @@
     <string name="note_name_settings">Сменить названия нот на:</string>
     <string name="note_names_toast">Система нотации изменена</string>
     <string name="interval_note_text">Интервал по нотам</string>
+    <string name="ionian">Ионийский лад</string>
+    <string name="dorian">Дорийский лад</string>
+    <string name="phrygian">Фригийский лад</string>
+    <string name="lydian">Лидийский лад</string>
+    <string name="mixolydian">Миксолидийский лад</string>
+    <string name="aeolian">Аэолийский лад</string>
+    <string name="locrian">Локрийский лад</string>
+    <string-array name="scale_names">
+        <item>Ионийский лад</item>
+        <item>Дорийский лад</item>
+        <item>Фригийский лад</item>
+        <item>Лидийский лад</item>
+        <item>Миксолидийский лад</item>
+        <item>Аэолийский лад</item>
+        <item>Локрийский лад</item>
+    </string-array>
     <string name="chord_note">%1$s-аккорд</string>
     <string-array name="chord_types">
         <item>Maj7</item>

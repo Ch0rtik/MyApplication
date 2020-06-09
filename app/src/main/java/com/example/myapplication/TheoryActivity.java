@@ -12,5 +12,6 @@ public class TheoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theory);
         ImageView theoryImage = findViewById(R.id.theoryImage);
+        theoryImage.setImageResource(R.drawable.circle);
     }
 }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Button quizButton = findViewById(R.id.quizButton);
         Button settingsButton = findViewById(R.id.settingsButton);
         Button theoryButton = findViewById(R.id.theoryButton);
+        ImageView imageView = findViewById(R.id.mainImage);
+        imageView.setImageResource(R.drawable.logo);
 
         quizButton.setOnClickListener(new View.OnClickListener() {
             @Override

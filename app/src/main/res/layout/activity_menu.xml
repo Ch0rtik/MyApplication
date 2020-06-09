@@ -31,5 +31,14 @@
             android:background="@android:color/background_light"
             android:text="@string/chord_button"
             android:textSize="21sp" />
+
+        <Button
+            android:id="@+id/tonalityButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_light"
+            android:text="@string/tonality_button"
+            android:textSize="21sp" />
     </LinearLayout>
 </ScrollView>

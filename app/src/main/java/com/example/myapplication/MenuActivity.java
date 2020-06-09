@@ -18,6 +18,7 @@ public class MenuActivity extends AppCompatActivity {
 
         Button intervalButton = findViewById(R.id.intervalButton);
         Button chordButton = findViewById(R.id.chordButton);
+        Button tonalityButton = findViewById(R.id.tonalityButton);
 
         intervalButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,13 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ChordActivity.class);
+                startActivity(intent);
+            }
+        });
+        tonalityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, TonalityActivity.class);
                 startActivity(intent);
             }
         });
