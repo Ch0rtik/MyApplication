@@ -19,14 +19,13 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private TextView scoreText;
     private TextView intervalText;
     private TextView noteText;
-    private TextView numText;
 
     public static final String NOTE_NAMES = "noteNames";
 
 
     private int rightButton;
     private int currentQuestNumb;
-    private boolean[] noteTaken = new boolean[21];
+    private boolean[] noteTaken = new boolean[35];
     private boolean[] chordNoteTaken = new boolean[4];
     private boolean[] intervalTaken = new boolean[11];
     private boolean[] buttonTaken = new boolean[9];
@@ -56,6 +55,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private boolean thirdType;
     private boolean seventhType;
     private boolean any;
+    private boolean quizWrong=false;
 
     private int[] buttonValue = new int[4];
     private int[] noteValue = new int[7];
@@ -103,7 +103,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         intervalText = findViewById(R.id.intervalText);
         noteText = findViewById(R.id.noteText);
-        numText = findViewById(R.id.numText);
         scoreText.setText(String.format(getResources().getString(R.string.score_num), "0"));
 
         intervalNames = getResources().getStringArray(R.array.interval_names);
@@ -115,10 +114,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = getIntent();
 
 
-        noteNumber = 7;
-        noteSkip = 7;
+        noteNumber = 9;
+        noteSkip = 13;
 
-        numText.setText(String.format(getResources().getString(R.string.quest_num), String.valueOf(currentQuestNumb), String.valueOf(questNumb)));
+
         scoreText.setText(String.format(getResources().getString(R.string.score_num), String.valueOf(score)));
 
         setNoteNames();
@@ -421,7 +420,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 4; i++) {
             if (i != rightButton) {
                 do {
-                    buttonValue[i] = new Random().nextInt(21);
+                    buttonValue[i] = new Random().nextInt(21)+7;
                 } while (noteTaken[buttonValue[i]]);
                 noteTaken[buttonValue[i]] = true;
                 ansButton[i].setText(noteNames[buttonValue[i]]);
@@ -534,7 +533,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 9; i++) {
             if (!buttonTaken[i]) {
                 do {
-                    randomNoteNumber = new Random().nextInt(21);
+                    randomNoteNumber = new Random().nextInt(21)+7;
                 } while (noteTaken[randomNoteNumber]);
 
                 noteTaken[randomNoteNumber] = true;
@@ -631,7 +630,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 9; i++) {
             if (!buttonTaken[i]) {
                 do {
-                    randomNoteNumber = new Random().nextInt(21);
+                    randomNoteNumber = new Random().nextInt(21)+7;
                 } while (noteTaken[randomNoteNumber]);
 
                 noteTaken[randomNoteNumber] = true;
@@ -686,23 +685,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         } else {
 
-
             if (playerButton == rightButton) {
                 score++;
-            }
-
-            currentQuestNumb++;
-
-            if (currentQuestNumb > questNumb - 1) {
-
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("result", score);
-                setResult(RESULT_OK, resultIntent);
-                finish();
-
-            } else {
-
-                numText.setText(String.format(getResources().getString(R.string.quest_num), String.valueOf(currentQuestNumb), String.valueOf(questNumb)));
                 scoreText.setText(String.format(getResources().getString(R.string.score_num), String.valueOf(score)));
                 switch (quizType) {
                     case 0:
@@ -713,18 +697,23 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case 2:
                         startIntervalQuiz2();
-
                 }
-
+            }else {
+                Check3();
             }
+
         }
+
+
 
     }
 
     private void Check2() {
+
+        answeredWrong = false;
         for (int i = 0; i < 9; i++) {
 
-            answeredWrong = false;
+
 
             if (rightChordButton[i] != buttonPressed[i]) {
                 answeredWrong = true;
@@ -734,17 +723,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         if (!answeredWrong) {
 
             score++;
-        }
-        currentQuestNumb++;
-
-        if (currentQuestNumb > questNumb - 1) {
-
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra("result", score);
-            setResult(RESULT_OK, resultIntent);
-            finish();
-
-        } else {
 
             for (int i = 0; i < 9; i++) {
 
@@ -761,14 +739,53 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             submitLayout.setVisibility(View.INVISIBLE);
             buttonPressedAmount = 0;
 
-            numText.setText(String.format(getResources().getString(R.string.quest_num), String.valueOf(currentQuestNumb), String.valueOf(questNumb)));
             scoreText.setText(String.format(getResources().getString(R.string.score_num), String.valueOf(score)));
             if (quizType == 3) {
                 startTonalityQuiz();
             } else {
                 startChordQuiz2();
             }
+
+
+        }else{
+            Check3();
         }
+    }
+
+    private void Check3(){
+        submitButton.setClickable(true);
+        submitButton.setVisibility(View.VISIBLE);
+        submitLayout.setVisibility(View.VISIBLE);
+
+        if (chordQuizType == 7 || quizType == 3) {
+
+            for (int i = 0; i < 9; i++) {
+                if (rightChordButton[i]) {
+                    ansButton[i].setBackgroundResource(R.color.colorPrimary);
+                    ansButton[i].setTextColor(Color.WHITE);
+                    ansLayout[i].setBackgroundColor(Color.WHITE);
+                }else{
+                    ansButton[i].setBackgroundColor(Color.WHITE);
+                    ansButton[i].setTextColor(Color.BLACK);
+                    ansLayout[i].setBackgroundResource(R.color.colorPrimary);
+                }
+
+                ansButton[i].setClickable(false);
+            }
+        }else {
+            for (int i=0;i<9;i++){
+                ansButton[i].setClickable(false);
+            }
+            ansButton[rightButton].setBackgroundResource(R.color.colorPrimary);
+            ansButton[rightButton].setTextColor(Color.WHITE);
+            ansLayout[rightButton].setBackgroundColor(Color.WHITE);
+
+
+        }
+
+        quizWrong=true;
+
+
     }
 
 
@@ -822,8 +839,15 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.submitButton:
+                if(quizWrong){
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra("result", score);
+                    setResult(RESULT_OK, resultIntent);
+                    finish();
+                }else {
+                    Check2();
+                }
 
-                Check2();
 
         }
     }

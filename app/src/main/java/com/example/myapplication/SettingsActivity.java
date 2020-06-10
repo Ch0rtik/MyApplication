@@ -35,6 +35,28 @@ public class SettingsActivity extends AppCompatActivity {
                 editor.putInt(IntervalActivity.MINOR_THIRD_HIGH, 0);
                 editor.putInt(IntervalActivity.MAJOR_SEVENTH_HIGH, 0);
                 editor.putInt(IntervalActivity.MINOR_SEVENTH_HIGH, 0);
+                editor.putInt(IntervalActivity.MAJOR_SECOND_HIGH, 0);
+                editor.putInt(IntervalActivity.MINOR_SECOND_HIGH, 0);
+                editor.putInt(IntervalActivity.MAJOR_SIXTH_HIGH, 0);
+                editor.putInt(IntervalActivity.MINOR_SIXTH_HIGH, 0);
+                editor.putInt(IntervalActivity.DIMINISHED_FIFTH_HIGH, 0);
+                editor.putInt(IntervalActivity.AUGMENTED_FOURTH_HIGH, 0);
+                editor.putInt(IntervalActivity.INTERVAL_NOTE_HIGH, 0);
+                editor.putInt(ChordActivity.NOTE_CHORD_HIGH, 0);
+                editor.putInt(ChordActivity.ANY_CHORD_HIGH, 0);
+                editor.putInt(ChordActivity.MIN_MAJ_CHORD_HIGH_HIGH, 0);
+                editor.putInt(ChordActivity.DOMINANT_CHORD_HIGH, 0);
+                editor.putInt(ChordActivity.MAJOR_CHORD_HIGH, 0);
+                editor.putInt(ChordActivity.MINOR_CHORD_HIGH, 0);
+                editor.putInt(ChordActivity.MAJOR_SEVENTH_CHORD_HIGH, 0);
+                editor.putInt(ChordActivity.MINOR_SEVENTH_CHORD_HIGH, 0);
+                editor.putInt(TonalityActivity.LOCRIAN_HIGH, 0);
+                editor.putInt(TonalityActivity.LYDIAN_HIGH, 0);
+                editor.putInt(TonalityActivity.MIXOLYDIAN_HIGH, 0);
+                editor.putInt(TonalityActivity.AEOLIAN_HIGH, 0);
+                editor.putInt(TonalityActivity.PHRYGIAN_HIGH, 0);
+                editor.putInt(TonalityActivity.IONIAN_HIGH, 0);
+                editor.putInt(TonalityActivity.DORIAN_HIGH, 0);
 
                 editor.apply();
 

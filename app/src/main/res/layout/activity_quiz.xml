@@ -58,19 +58,6 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/numText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="21sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998" />
-
-    <TextView
         android:id="@+id/scoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07999998" />
+        app:layout_constraintVertical_bias="0.050000012" />
 
     <LinearLayout
         android:id="@+id/answerLayout0"
@@ -331,7 +318,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:background="@color/colorPrimary"
-            android:text="Ответить"
+            android:text="Далее"
             android:textColor="@android:color/background_light"
             android:textSize="25sp" />
     </LinearLayout>

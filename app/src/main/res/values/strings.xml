@@ -22,10 +22,16 @@
     <string name="minor_third_text">Малые терции</string>
     <string name="major_seventh_text">Большие септимы</string>
     <string name="minor_seventh_text">Малые септимы</string>
+    <string name="major_second_text">Большие секунды</string>
+    <string name="minor_second_text">Малые секунды</string>
+    <string name="major_sixth_text">Большие сексты</string>
+    <string name="minor_sixth_text">Малые сексты</string>
+    <string name="diminished_fifth_text">Уменьшенные квинты</string>
+    <string name="augmented_fourth">Увеличенные кварты</string>
     <string name="third_button">Терции/Сексты %1$s</string>
     <string name="seventh_button">Септимы/Секунды %1$s</string>
     <string name="quest_num">Вопросов пройдено: %1$s/%2$s</string>
-    <string name="high_text">%1$s/10</string>
+    <string name="high_text">%1$s</string>
     <string name="interval_button">Интервалы</string>
     <string name="chord_button">Аккорды</string>
     <string name="tonality_button">Тональности</string>
@@ -60,6 +66,13 @@
         <item>minMaj7</item>
     </string-array>
     <string-array name="note_names">
+        <item>F♭♭</item>
+        <item>C♭♭</item>
+        <item>G♭♭</item>
+        <item>D♭♭</item>
+        <item>A♭♭</item>
+        <item>E♭♭</item>
+        <item>B♭♭</item>
         <item>F♭</item>
         <item>C♭</item>
         <item>G♭</item>
@@ -81,8 +94,22 @@
         <item>A#</item>
         <item>E#</item>
         <item>B#</item>
+        <item>F##</item>
+        <item>C##</item>
+        <item>G##</item>
+        <item>D##</item>
+        <item>A##</item>
+        <item>E##</item>
+        <item>B##</item>
     </string-array>
     <string-array name="note_names_do">
+        <item>Фа♭♭</item>
+        <item>До♭♭</item>
+        <item>Соль♭♭</item>
+        <item>Ре♭♭</item>
+        <item>Ля♭♭</item>
+        <item>Ми♭♭</item>
+        <item>Си♭♭</item>
         <item>Фа♭</item>
         <item>До♭</item>
         <item>Соль♭</item>
@@ -104,6 +131,13 @@
         <item>Ля#</item>
         <item>Ми#</item>
         <item>Си#</item>
+        <item>Фа##</item>
+        <item>До##</item>
+        <item>Соль##</item>
+        <item>Ре##</item>
+        <item>Ля##</item>
+        <item>Ми##</item>
+        <item>Си##</item>
     </string-array>
     <string-array name="interval_names">
         <item>Уменьшенную приму</item>
@@ -118,7 +152,7 @@
         <item>Большую секунду</item>
         <item>Большую сексту</item>
         <item>Большую терцию</item>
-        <item>Ббольшую септиму</item>
+        <item>Большую септиму</item>
         <item>Увеличенную кварту</item>
         <item>Увеличенную приму</item>
         <item>Увеличенную квинту</item>
@@ -126,11 +160,11 @@
         <item>Увеличенную сексту</item>
         <item>Увеличенную терцию</item>
         <item>Увеличенную септиму</item>
-        <item>Увеличеннную кварту</item>
+        <item>Дважды увеличеннную кварту</item>
     </string-array>
     <string-array name="interval_names_2">
-        <item>F♭</item>
-        <item>dim5</item>
+        <item>d1</item>
+        <item>d5</item>
         <item>m2</item>
         <item>m6</item>
         <item>m3</item>
@@ -142,13 +176,17 @@
         <item>M6</item>
         <item>M3</item>
         <item>M7</item>
-        <item>aug5</item>
-        <item>F#</item>
-        <item>УВЕЛИЧЕННУЮ КВИНТУ</item>
-        <item>УВЕЛИЧЕННУЮ СЕКУНДУ</item>
-        <item>УВЕЛИЧЕННУЮ СЕКСТУ</item>
-        <item>A#</item>
-        <item>E#</item>
-        <item>B#</item>
+        <item>A4</item>
+        <item>A1</item>
+        <item>A5</item>
+        <item>A2</item>
+        <item>A6</item>
+        <item>A3</item>
+        <item>A7</item>
+        <item>AA5</item>
     </string-array>
+    <string name="interval_theory"><big><b>Квинты</b></big>\n
+        Находятся на расстоянии семи полутонов. Могут быть получены одним шагом по часовой стрелке в квинто-квартовом круге или пропуском трёх букв по алфавиту (<b>A</b> B, C, D, <b>E</b>).\n<big><b>Терциии</b></big>\n Находятся на расстоянии четырёх или трёх полутонов. Большие терции получаются четырьмя шагами по часовой стрелке на квинто-квартовом круге, а малые - тремя шагами против. Названия получаются пропуском одной буквы по алфавиту (<b>C</b>, D, <b>E</b>).\n<big><b>Септимы</b></big>\n Находятся на расстоянии одиннадцати или десяти полутонов. Большие септимы получаются пятью шагами по часовой стрелке, а малые - двумя шангами против. Названия являются предыдущей буквой по алфавиту (<b>D</b> - <b>C</b>).\n<big><b>Инверсиии</b></big>\n Инверсии получаются шагом в противоположную сторону по квинто-квартовому кругу. Большие интервалы инвертируются в малые, малые - в большие.\n<big><b>Сокращённые названия интервалов и их инверсий</b></big>\n P5 (чистая квинта) - P4 (чистая кварта)\n M3 (большая терция) - m6 (малая секста)\n m3 (малая терция) - M6 (большая секста)\n M7 (большая септима) - m2 (малая секунда)\n m7 (малая септима) - M2 (большая секунда)</string>
+    <string name="chord_theory"><big><b>Интервалы аккордов от тоники</b></big>\n Мажорное трезвучие - M3, P5\n Минорное трезвучие - m3, P5\n Мажорный септаккорд - M3, P5, M7\n Минорный септаккорд - m3, P5, m7/n Доминантсептаккорд - M3, P5, m7\n Минорно-мажорный септаккорд - m3, P5, M7</string>
+    <string name="tonality_theory"><big><b>Интервалы ладов от тоники</b></big>\n Ионийский (натуральный мажор) - M2, M3, P4, P5, M6, M7\n Дорийский  - M2, m3, P4, P5, M6, m7\n Фригийский  - m2, m3, P4, P5, m6, m7\n Лидийский - M2, M3, A4, P5, M6, M7\n Миксоидийский - M2, M3, P4, P5, M6, m7\n Аэолийский (натуральный минор) - M2, m3, P4, P5, m6, m7\n Локрийский - m2, m3, P4, d5, m6, m7</string>
 </resources>

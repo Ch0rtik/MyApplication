@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
 
     private TextView[] highText = new TextView[8];
     private RelativeLayout[] chordView = new RelativeLayout[8];
+    private Button theoryButton;
 
     private int reqCode;
 
@@ -43,6 +45,8 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
         chordView[6] = findViewById(R.id.anyChordView);
         chordView[7] = findViewById(R.id.noteChordView);
 
+        theoryButton = findViewById(R.id.theoryButton3);
+
         highText[0] = findViewById(R.id.majorChordHigh);
         highText[1] = findViewById(R.id.minorChordHigh);
         highText[2] = findViewById(R.id.majorSeventhChordHigh);
@@ -61,6 +65,8 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
         chordView[6].setOnClickListener(this);
         chordView[7].setOnClickListener(this);
 
+        theoryButton.setOnClickListener(this);
+
         loadData();
         updateViews();
 
@@ -68,53 +74,62 @@ public class ChordActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(ChordActivity.this, QuizActivity.class);
-        switch (v.getId()) {
-            case R.id.majorChordView:
 
-                reqCode = 0;
-                break;
 
-            case R.id.minorChordView:
+        if(v.getId()==R.id.theoryButton3){
+            Intent intent = new Intent(ChordActivity.this, TheoryActivity2.class);
+            intent.putExtra(MenuActivity.THEORY_TYPE, 1);
+            startActivity(intent);
+        }else {
 
-                reqCode = 1;
-                break;
+            Intent intent = new Intent(ChordActivity.this, QuizActivity.class);
+            switch (v.getId()) {
+                case R.id.majorChordView:
 
-            case R.id.majorSeventhChordView:
+                    reqCode = 0;
+                    break;
 
-                reqCode = 2;
-                break;
+                case R.id.minorChordView:
 
-            case R.id.minorSeventhChordView:
+                    reqCode = 1;
+                    break;
 
-                reqCode = 3;
-                break;
+                case R.id.majorSeventhChordView:
 
-            case R.id.dominantChordView:
+                    reqCode = 2;
+                    break;
 
-                reqCode = 4;
-                break;
+                case R.id.minorSeventhChordView:
 
-            case R.id.minMajChordView:
+                    reqCode = 3;
+                    break;
 
-                reqCode = 5;
-                break;
+                case R.id.dominantChordView:
 
-            case R.id.anyChordView:
+                    reqCode = 4;
+                    break;
 
-                reqCode = 6;
-                break;
+                case R.id.minMajChordView:
 
-            case R.id.noteChordView:
+                    reqCode = 5;
+                    break;
 
-                reqCode = 7;
+                case R.id.anyChordView:
 
+                    reqCode = 6;
+                    break;
+
+                case R.id.noteChordView:
+
+                    reqCode = 7;
+
+            }
+
+            intent.putExtra(CHORD_TYPE, reqCode);
+            intent.putExtra(MenuActivity.QUIZ_TYPE, 1);
+
+            startActivityForResult(intent, reqCode);
         }
-
-        intent.putExtra(CHORD_TYPE, reqCode);
-        intent.putExtra(MenuActivity.QUIZ_TYPE, 1);
-
-        startActivityForResult(intent, reqCode);
     }
 
     @Override

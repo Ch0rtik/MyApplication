@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class TonalityActivity extends AppCompatActivity implements View.OnClickListener {
@@ -17,6 +18,8 @@ public class TonalityActivity extends AppCompatActivity implements View.OnClickL
     private View[] menuView = new View[7];
     private TextView[] highText = new TextView[7];
     private int[] highScore = new int[7];
+
+    private Button theoryButton;
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String IONIAN_HIGH = "ionianHigh";
@@ -40,6 +43,8 @@ public class TonalityActivity extends AppCompatActivity implements View.OnClickL
         menuView[5] = findViewById(R.id.aeolianView);
         menuView[6] = findViewById(R.id.locrianView);
 
+        theoryButton = findViewById(R.id.theoryButton4);
+
         highText[0] = findViewById(R.id.ionianHigh);
         highText[1] = findViewById(R.id.dorianHigh);
         highText[2] = findViewById(R.id.phrygianHigh);
@@ -59,51 +64,63 @@ public class TonalityActivity extends AppCompatActivity implements View.OnClickL
         menuView[4].setOnClickListener(this);
         menuView[5].setOnClickListener(this);
         menuView[6].setOnClickListener(this);
+
+        theoryButton.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(TonalityActivity.this, QuizActivity.class);
-        switch (v.getId()) {
-            case R.id.ionianView:
+        if (v.getId() == R.id.theoryButton4) {
 
-                reqCode = 0;
-                break;
+            Intent intent = new Intent(TonalityActivity.this, TheoryActivity2.class);
+            intent.putExtra(MenuActivity.THEORY_TYPE, 2);
+            startActivity(intent);
 
-            case R.id.dorianView:
+        } else {
 
-                reqCode = 1;
-                break;
+            Intent intent = new Intent(TonalityActivity.this, QuizActivity.class);
+            switch (v.getId()) {
+                case R.id.ionianView:
 
-            case R.id.phrygianView:
+                    reqCode = 0;
+                    break;
 
-                reqCode = 2;
-                break;
+                case R.id.dorianView:
 
-            case R.id.lydianView:
+                    reqCode = 1;
+                    break;
 
-                reqCode = 3;
-                break;
+                case R.id.phrygianView:
 
-            case R.id.mixolydianView:
+                    reqCode = 2;
+                    break;
 
-                reqCode = 4;
-                break;
+                case R.id.lydianView:
 
-            case R.id.aeolianView:
+                    reqCode = 3;
+                    break;
 
-                reqCode = 5;
-                break;
+                case R.id.mixolydianView:
 
-            case R.id.locrianView:
+                    reqCode = 4;
+                    break;
 
-                reqCode=6;
+                case R.id.aeolianView:
+
+                    reqCode = 5;
+                    break;
+
+                case R.id.locrianView:
+
+                    reqCode = 6;
 
 
+            }
+
+            intent.putExtra(SCALE_NUMBER, reqCode);
+            intent.putExtra(MenuActivity.QUIZ_TYPE, 3);
+            startActivityForResult(intent, reqCode);
         }
-
-        intent.putExtra(SCALE_NUMBER, reqCode);
-        intent.putExtra(MenuActivity.QUIZ_TYPE, 3);
-        startActivityForResult(intent, reqCode);
 
     }
 

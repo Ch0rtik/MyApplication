@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MenuActivity extends AppCompatActivity {
 
     public static final String QUIZ_TYPE = "com.example.application.example.QUIZ_TYPE";
+    public static final String THEORY_TYPE = "com.example.application.example.THEORY_TYPE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
